@@ -92,7 +92,7 @@ def comment_collector():
     #send comments to be parsed and possibly written into sonnet
     i = 0
     while i < 10:
-        if comment_parser(comArray[i]) != "NO_PARSE":
+        if comment_parser(comArray[i]) != "NO_SELECT":
 	    sonnet = open('sonnet.txt', 'a')	
             sonnet.seek(0, 2) #Go the the 0th byte before the end of file
             sonnet.write(comArray[i]+'\n')
@@ -106,7 +106,7 @@ def comment_collector():
 
 def comment_parser(comment):
     if comment == None:
-        return "NO_PARSE";
+        return "NO_SELECT";
     else:
         return comment;
 
